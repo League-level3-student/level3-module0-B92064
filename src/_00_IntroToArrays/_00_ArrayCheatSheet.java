@@ -1,10 +1,13 @@
 package _00_IntroToArrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class _00_ArrayCheatSheet {
+
 	public static void main(String[] args) {
+
 		// 1. make an array of 5 Strings
 		ArrayList<String> s = new ArrayList<String>();
 		s.add("1");
@@ -40,17 +43,26 @@ public class _00_ArrayCheatSheet {
 		}
 		// 9. without printing the entire array, print only the smallest number on the
 		// array
-		for (int u = 0; u < 50; u++) {
-			if(i.get(u)<i.get(u +1)){
-				i.remove(u +1);
+		int smallest = new Integer(i.get(0));
+		for (int a = 0; a < 50; a++) {
+			if (i.get(a) < smallest) {
+				smallest = i.get(a);
 			}
+
 		}
-		
+		System.out.println("The smallest is " + smallest);
 		// 10 print the entire array to see if step 8 was correct
 
 		// 11. print the largest number in the array.
-
+		int largest = new Integer(i.get(0));
+		for( int a = 0; a< 50; a++){
+			if( i.get(a) > largest) {
+				largest = i.get(a);
+			}
+		}
+		System.out.println("The largest is "+ largest);
 		// 12. print only the last element in the array
-
+		System.out.println("The last number in the array is "+i.get(49));
 	}
+
 }

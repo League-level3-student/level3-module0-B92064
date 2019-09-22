@@ -1,14 +1,12 @@
-/* Copy the code into a new Processing sketch and complete then steps. */
-
 //1. create an array of ints. don't initialize it yet.
-
+int[] i;
 
 void setup() {
   //2. set the size of your window
-  
+  size(600,600);
 
   //3. initialize your array with the built in width variable
-
+ int[] i = new int[width];
   
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable

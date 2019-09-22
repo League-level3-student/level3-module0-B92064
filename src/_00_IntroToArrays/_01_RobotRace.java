@@ -13,10 +13,10 @@ public class _01_RobotRace {
 	public static void main(String[] args) throws InterruptedException {
 
 		// 2. create an array of 5 robots.
-		int rn = 5;
-		ArrayList<Robot> r = new ArrayList<Robot>(rn);
+	//	int rn = 5;
+		ArrayList<Robot> r = new ArrayList<Robot>();
 		boolean finished = false;
-		int dist = 0;
+//		int dist = 0;
 		Random rand = new Random();
 		int rand1 = rand.nextInt(50);
 		int angle = 1;
@@ -24,13 +24,15 @@ public class _01_RobotRace {
 		long dance = 500;
 		
 		// 3. use a for loop to initialize the robots.
-		for (int i = 0; i < rn; i++) {
+		String n = JOptionPane.showInputDialog("How many robots do you want?");
+		int one = Integer.parseInt(n);
+		for (int i = 0; i < one; i++) {
 			Robot u = new Robot();
 			r.add(u);
-			dist += 750/rn;
-			u.setX(dist);
+		//	dist += 750/one;
+			u.setX(450);
 			u.setY(500);
-			
+			u.setAngle(90);
 		}
 		// 4. make each robot start at the bottom of the screen, side by side, facing up
 
@@ -40,16 +42,23 @@ public class _01_RobotRace {
 		// 6. use a while loop to repeat step 5 until a robot has reached the top of the
 		// screen.
 		while (finished == false) {
-			for (int i = 0; i < rn; i++) {
+			for (int i = 0; i < one; i++) {
 				if(finished == false) {
-				r.get(i).move(rand1);
-				rand1 = rand.nextInt(50);
+					rand1 = rand.nextInt(50);
+				for(int k = 0; k < rand1; k++) {
+					System.out.println(r.get(i).getX() + ", "+r.get(i).getY());
+					r.get(i).move(3);
+					r.get(i).turn(-1);
+					if (r.get(i).getX() == 450 && r.get(i).getY() == 500) {
+						finished = true;
+						JOptionPane.showMessageDialog(null, "Robot " + (i+1) + " has won!");
+						winner = i;
+					}
 				}
-				if (r.get(i).getY() <= 50) {
-					finished = true;
-					JOptionPane.showMessageDialog(null, "Robot " + (i+1) + " has won!");
-					winner = i;
+				
+				
 				}
+				
 			}
 		}
 
@@ -70,6 +79,6 @@ public class _01_RobotRace {
 		// 8. try different races with different amounts of robots.
 
 		// 9. make the robots race around a circular track.
-
+		
 	}
 }

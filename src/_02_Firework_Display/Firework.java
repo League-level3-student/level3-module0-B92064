@@ -1,6 +1,7 @@
 package _02_Firework_Display;
 
 import java.awt.Graphics;
+import java.lang.reflect.Array;
 import java.util.Random;
 
 /*
@@ -13,28 +14,38 @@ import java.util.Random;
 public class Firework{
 	public static final int GRAVITY = 1;
 	
-	//1. Create an array of Spark objects called sparks. Don't initialize it.
+	//1. Create an array of Spark objects called sparks. Don't initialize it. 
+	Object[] sparks;
+	
 	
 	public boolean dead = false;
-	
+	public int x;
+	public int y;
 	public Firework() {
 		//2. Initialize the Spark array to contain 100 Sparks. 
-
+		sparks = new Object[100];
+		
 		
 		//3. Iterate through the sparks and initialize each one to a new Spark.
 		//   Make each spark start at the middle bottom of the screen.
-	
+	for(int i = 0; i < 100; i++) {
+		Object Spark = new Object();
+		Spark s = new Spark(x, y);
+		sparks[i] = s;
+	}
 	}
 	
 	public void launch() {
 		//4. Iterate through the sparks and reset their x and y location
 		//   to their original starting point.
-		
+		for(int i = 0; i < 100; i++) {
+		//	sparks[i]
+		}
 	}
 	
 	public void updateSparks() {
 		//8. Uncomment this code. See if you can understand what it is doing.
-		
+	
 //		for(int i = 0; i < sparks.length; i++) {
 //
 //			Spark s = sparks[i];

@@ -40,7 +40,9 @@ public class FireworkDisplay extends JPanel implements ActionListener {
 		buttonPanel = new JPanel();
 		fireButton = new JButton("FIRE");
 		fireButton.addActionListener((e)->{
-			fire();
+			for(int i =0; i < 10; i++) {
+				fire();
+			}
 		});
 		
 		buttonPanel.add(fireButton);
